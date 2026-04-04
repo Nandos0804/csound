@@ -1191,13 +1191,13 @@ typedef int32_t (*INITFN2)(CSOUND *);
  int32_t sfont_ModuleInit(CSOUND *csound);
  int32_t sfont_ModuleCreate(CSOUND *csound);
  int32_t newgabopc_ModuleInit(CSOUND *csound);
+ int32_t arrayops_init_modules(CSOUND *csound);
  #ifndef __wasi__
  int32_t csoundModuleInit_ampmidid(CSOUND *csound);
  int32_t csoundModuleCreate_mixer(CSOUND *csound);
  int32_t csoundModuleInit_mixer(CSOUND *csound);
  int32_t csoundModuleInit_doppler(CSOUND *csound);
  int32_t csoundModuleInit_signalflowgraph(CSOUND *csound);
- int32_t arrayops_init_modules(CSOUND *csound);
  int32_t lfsr_init_modules(CSOUND *csound);
  int32_t pvsops_init_modules(CSOUND *csound);
  int32_t trigEnv_init_modules(CSOUND *csound);
@@ -1288,13 +1288,13 @@ CS_NOINLINE int32_t csoundInitStaticModules(CSOUND *csound)
     pvsopc_ModuleInit,
     sfont_ModuleCreate,
     sfont_ModuleInit,
+    arrayops_init_modules,
 #if !defined(__wasi__)
     csoundModuleInit_ampmidid,
     csoundModuleCreate_mixer,
     csoundModuleInit_mixer,
     csoundModuleInit_doppler,
     csoundModuleInit_signalflowgraph,
-    arrayops_init_modules,
     lfsr_init_modules,
     pvsops_init_modules,
     trigEnv_init_modules,
